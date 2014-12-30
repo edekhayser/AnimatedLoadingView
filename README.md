@@ -1,7 +1,7 @@
 LoadingView
 ===========
 
-LoadingView is an intriguing loading screen for operations with an unknown duration.
+LoadingView is an aesthetically pleasing loading screen for operations with an unknown duration.
 
 This view has a clear background, and can be placed over another view with the view behind showing through.
 
