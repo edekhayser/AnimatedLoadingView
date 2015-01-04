@@ -1,12 +1,11 @@
-LoadingView
-===========
+# LoadingView
 
-LoadingView is an aesthetically pleasing loading screen for operations with an unknown duration.
-
-This view has a clear background, and can be placed over another view with the view behind showing through.
-
-If you want the background dimmed, change the background color of LoadingView to a black/gray with transparency.
+LoadingView is an aesthetically pleasing loading screen for operations with an unknown duration. This view has a clear background, and can be placed over another view with the view behind showing through. If you want the background dimmed, change the background color of LoadingView to a black/gray with transparency.
 
 Idea by Douglas Bumby. Modelled after Monument Valley.
 
-<p align="center"><img title="Animation" src="https://raw.githubusercontent.com/edekhayser/LoadingView/master/Animation.gif"/></p>
+![animation](https://raw.githubusercontent.com/istx25/LoadingView/master/Animation.gif)
+
+## Licensing
+
+LoadingView is subject to the MIT License. Copyright (c) 2015 Evan Dekhayser
