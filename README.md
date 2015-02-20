@@ -4,7 +4,7 @@ LoadingView is an aesthetically pleasing loading screen for operations with an u
 
 Idea by Douglas Bumby. Modelled after Monument Valley.
 
-![animation](https://raw.githubusercontent.com/istx25/LoadingView/master/Animation.gif)
+![animation](https://github.com/edekhayser/LoadingView/blob/master/Animation.gif)
 
 ## Licensing
 
