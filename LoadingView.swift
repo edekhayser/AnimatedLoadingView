@@ -11,11 +11,6 @@ import SceneKit
 
 public class LoadingView: SCNView {
 	
-	public override init(){
-		super.init()
-		updateScene()
-	}
-	
 	public override init(frame: CGRect){
 		super.init(frame: frame)
 		updateScene()
@@ -32,8 +27,8 @@ public class LoadingView: SCNView {
 	
 	private func updateScene(){
 		backgroundColor = UIColor.clearColor()
-		
-		self.scene = SCNScene()
+		scene = SCNScene()
+        
 		let cameraNode = SCNNode()
 		cameraNode.camera = SCNCamera()
 		scene!.rootNode.addChildNode(cameraNode)
@@ -62,9 +57,7 @@ public class LoadingView: SCNView {
 		let shortSide: Float = 0.125
 		let longSide: Float = 1.0
 		let distanceBetween: Float = longSide / 2 - shortSide / 2
-		
 		let group = SCNNode()
-		
 		let c = UIColor(red: 0.01, green: 0.61, blue: 0.91, alpha: 1.0)
 		let w = UIColor.whiteColor()
 		
@@ -135,6 +128,4 @@ public class LoadingView: SCNView {
 		
 		return group
 	}
-	
-	
 }
