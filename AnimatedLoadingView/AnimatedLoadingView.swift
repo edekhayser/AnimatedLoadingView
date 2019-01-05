@@ -14,18 +14,18 @@ public class AnimatedLoadingView: SCNView {
 		super.init(frame: frame)
 		updateScene()
 	}
-	
-	public override init(frame: CGRect, options: [NSObject : AnyObject]?) {
-		super.init(frame: frame, options: options)
-		updateScene()
-	}
+    
+    public override init(frame: CGRect, options: [String : Any]? = nil) {
+        super.init(frame: frame, options: options)
+        updateScene()
+    }
 	
 	required public init(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
 	private func updateScene(){
-		backgroundColor = UIColor.clearColor()
+		backgroundColor = UIColor.clear
 		scene = SCNScene()
         
 		let cameraNode = SCNNode()
@@ -35,21 +35,21 @@ public class AnimatedLoadingView: SCNView {
 		
 		let cube = cubeNode()
 		scene!.rootNode.addChildNode(cube)
-		cube.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(CGFloat(M_2_PI), y: CGFloat(M_PI), z: CGFloat(M_2_SQRTPI), duration: 1.0)))
+        cube.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 2.0 / CGFloat.pi, y: CGFloat.pi, z: 2.0 / CGFloat.pi.squareRoot(), duration: 1.0)))
 		
 		let lightNode = SCNNode()
 		lightNode.light = SCNLight()
-		lightNode.light?.type = SCNLightTypeOmni
+		lightNode.light?.type = .omni
 		lightNode.position = SCNVector3Make(0, 10, 10)
 		scene!.rootNode.addChildNode(lightNode)
 		
-		let ambientLightNode = SCNNode()
-		ambientLightNode.light = SCNLight()
-		ambientLightNode.light?.type = SCNLightTypeAmbient
-		ambientLightNode.light?.color = UIColor.darkGrayColor()
-		scene!.rootNode.addChildNode(ambientLightNode)
+        let ambientLightNode = SCNNode()
+        ambientLightNode.light = SCNLight()
+        ambientLightNode.light?.type = .ambient
+        ambientLightNode.light?.color = UIColor.darkGray
+        scene!.rootNode.addChildNode(ambientLightNode)
 		
-		setTranslatesAutoresizingMaskIntoConstraints(false)
+		translatesAutoresizingMaskIntoConstraints = false
 	}
 	
 	private func cubeNode() -> SCNNode{
@@ -58,7 +58,7 @@ public class AnimatedLoadingView: SCNView {
 		let distanceBetween: Float = longSide / 2 - shortSide / 2
 		let group = SCNNode()
 		let c = UIColor(red: 0.01, green: 0.61, blue: 0.91, alpha: 1.0)
-		let w = UIColor.whiteColor()
+		let w = UIColor.white
 		
 		let boxZ = SCNBox(width: CGFloat(shortSide), height: CGFloat(shortSide), length: CGFloat(longSide), chamferRadius: 0)
 		let b1 = SCNNode(geometry: boxZ)
